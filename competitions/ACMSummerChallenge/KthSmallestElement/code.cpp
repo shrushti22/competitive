@@ -3,6 +3,12 @@
 
 using namespace std;
 
+
+
+
+
+
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -13,19 +19,36 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>a[i];
     }
-    sort(a,a+n);
-    int p = n;
-    int p1 =0, p2=n-1;
-    long long int res=0;
-    while(k-p>0){
-        res = max(res, a[p1]+a[p2]);
-        k = k-p;
-        p--;
-        p1++;
+    
+    long long int low = *min_element(a, a + n);
+    long long int high = *max_element(a, a + n);
+
+    low = low+low;
+    high = high + high;
+
+    while(low<=high){
+        long long int mid = (low+high)/2;
+
+        long long int cntless = 0,cnteql = 0;
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                if(a[i]+a[j]<mid){
+                    cntless++;
+                }else if(a[i]+a[j]==mid){
+                    cnteql++;
+                }
+            }
+        }
+
+        if(cntless<k && (cntless+cnteql)>=k){
+            cout<<mid<<"\n";
+            break;
+        }else if(cntless>=k){
+            high = mid-1;
+        }else if(cnteql){
+            low = mid + 1;
+        }
+
     }
-    if(k>0){
-        res = max(res, a[p1]+a[p1+k-1]);
-    }
-    cout<<res;
     return 0;
 }

@@ -13,7 +13,7 @@ int kadanealgo(vector<int> &arr){
             csum = 0;
         }
     }
-
+    return rsum;
 }
 
 
