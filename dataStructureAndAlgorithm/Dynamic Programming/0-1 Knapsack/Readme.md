@@ -7,7 +7,7 @@
 4) Minimum Subset sum difference
 5) Target Sum
 6) Number of subset with given difference
-
+ 
 
 ### Types of Knapsack Problem:
 1) Fractional Knapsack -> greedy Algorithm
@@ -30,3 +30,9 @@ You are given an array of size n. Count the number of subset whose sum is equal 
 
 ## Minimum Subset Sum Difference:
 You are given an array of size n. Partition given array into two subset set such that difference of the sum of both the subset is minimum.
+
+## Number of Subset with given difference
+You are given an array of size n. Partition given array into two subset such that difference of the sum of both the subset is equal to given value.
+
+## Target Sum
+You are given an array of size n. Count the number of ways to put sign '+' or '-' on each number such that sum is equal to given sum.
