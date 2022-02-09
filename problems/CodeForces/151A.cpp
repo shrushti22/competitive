@@ -13,6 +13,16 @@ int main()
         freopen("input.txt", "r", stdin);
         freopen("output.txt", "w", stdout);
     #endif
+    int n, k, l, c, d, p, nl, np;
+    cin>>n>>k>>l>>c>>d>>p>>nl>>np;
 
+    int t1, t2, t3;
+
+    t1 = (k*l) / (n*nl);
+    t2 = (c*d) / n;
+    t3 = p/ (n*np);
+
+    cout<< min(t1, min(t2, t3));
+    
     return 0;  
 }
