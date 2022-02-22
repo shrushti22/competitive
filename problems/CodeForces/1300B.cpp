@@ -14,25 +14,21 @@ int main()
         freopen("output.txt", "w", stdout);
     #endif
 
-    int t;
+    int t; 
     cin>>t;
 
     while(t--){
-        long long int a, b, c;
-        cin>>a>>b>>c;
+        int n;
+        cin>>n;
+        int a[2*n];
 
-        if(a>=c){
-            cout<<"-1 ";
-        }else{
-            cout<<"1 ";
+        for(int i=0; i<(2*n); i++){
+            cin>>a[i];
         }
 
-        if(a*b<=c){
-            cout<<"-1";
-        }else{
-            cout<<b;
-        }
-        cout<<"\n";
+        sort(a, a+(2*n));
+
+        cout<<a[n]-a[n-1]<<"\n";
     }
 
     return 0;  

@@ -14,25 +14,22 @@ int main()
         freopen("output.txt", "w", stdout);
     #endif
 
-    int t;
-    cin>>t;
+    string tbl;
+    cin>>tbl;
 
-    while(t--){
-        long long int a, b, c;
-        cin>>a>>b>>c;
-
-        if(a>=c){
-            cout<<"-1 ";
-        }else{
-            cout<<"1 ";
+    vector<string> a(5);
+    int flag =0;
+    for(int i=0; i<5; i++){
+        cin>>a[i];
+        if(a[i][0]==tbl[0] || a[i][1]==tbl[1]){
+            flag = 1;
         }
+    }
 
-        if(a*b<=c){
-            cout<<"-1";
-        }else{
-            cout<<b;
-        }
-        cout<<"\n";
+    if(flag){
+        cout<<"YES";
+    }else{
+        cout<<"NO";
     }
 
     return 0;  

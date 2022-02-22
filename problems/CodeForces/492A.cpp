@@ -14,26 +14,23 @@ int main()
         freopen("output.txt", "w", stdout);
     #endif
 
-    int t;
-    cin>>t;
+    int n;
+    cin>>n;
 
-    while(t--){
-        long long int a, b, c;
-        cin>>a>>b>>c;
+    int i=1;
 
-        if(a>=c){
-            cout<<"-1 ";
+    while(true){
+        int cubes_req = (i*(i+1))/2;
+        if(n>=cubes_req){
+            n -= cubes_req;
+            i++;
         }else{
-            cout<<"1 ";
+            break;
         }
-
-        if(a*b<=c){
-            cout<<"-1";
-        }else{
-            cout<<b;
-        }
-        cout<<"\n";
     }
+
+    i--;
+    cout<<i;
 
     return 0;  
 }

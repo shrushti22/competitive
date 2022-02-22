@@ -15,24 +15,23 @@ int main()
     #endif
 
     int t;
-    cin>>t;
+     cin>>t;
 
     while(t--){
-        long long int a, b, c;
-        cin>>a>>b>>c;
-
-        if(a>=c){
-            cout<<"-1 ";
-        }else{
-            cout<<"1 ";
+        int n;
+        cin>>n;
+        int r = n%10;
+        int ans = (r-1)*10;
+        int dig = 0;
+        while(n){
+            n /= 10;
+            dig++;
         }
+        
+        ans += (dig*(dig+1))/2;
 
-        if(a*b<=c){
-            cout<<"-1";
-        }else{
-            cout<<b;
-        }
-        cout<<"\n";
+        cout<<ans<<"\n";
+
     }
 
     return 0;  
